@@ -1,0 +1,19 @@
+{
+  "name": "foodfinder",
+  "version": "1.0.0",
+  "description": "Azure Functions sample for the Serverless framework",
+  "scripts": {
+    "test": "echo \"No tests yet...\"",
+    "start": "func host start",
+    "lint": "./node_modules/.bin/eslint --fix src"
+  },
+  "keywords": [
+    "azure",
+    "serverless"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "serverless-azure-functions": "^2.0.0"
+  }
+}
