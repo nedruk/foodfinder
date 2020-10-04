@@ -12,7 +12,8 @@
     "serverless"
   ],
   "dependencies": {
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
