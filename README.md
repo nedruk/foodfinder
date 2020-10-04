@@ -14,7 +14,7 @@ When working on a new feature:
 ## Setup
 **NOTE** VS Code is the preferred code editor, as it allows to make use of devcontainer. 
 1. Open solution folder in VS Code
-2. Select "Open in devcontainer" popup in the right bottom corner
+2. Select "Reopen in Devcontainer" popup in the right bottom corner
 3. Ready for action!
 
 ## Local run
@@ -68,6 +68,7 @@ Investigation showed that it uses quicksort algorithm behind the scenes.
 Additional testing against custom built quicksort function showed that javascript `sort()` performs better.  
 
 # Further improvements
+* Improve performance. Spike - implement BST in-order traversal.
 * Currently we are calling actual data endpoint every time our API is called.  
 Looking around the page with the source data, I found that it is updated on daily basis. In the future we could introduce some caching mechanism to avoid hitting the third party endpoint every time. 
 This could also serve as a "backup plan" when the third party endpoint is unavailable.
