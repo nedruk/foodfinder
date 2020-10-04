@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Azure Functions sample for the Serverless framework",
   "scripts": {
-    "test": "echo \"No tests yet...\"",
+    "test": "jest",
     "start": "func host start",
     "lint": "./node_modules/.bin/eslint --fix src"
   },
@@ -11,7 +11,9 @@
     "azure",
     "serverless"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^26.4.2"
+  },
   "devDependencies": {
     "eslint": "^7.10.0",
     "serverless-azure-functions": "^2.0.0"

@@ -4,8 +4,16 @@ FoodFinder is an API helping the users to find their preferred food options near
 # Getting started
 
 ## Code quality
+To run linter, execute 
+```sh
+npm run lint
+```
 
 ## Testing
+To run unit tests, execute
+```sh
+npm test
+```
 
 
 # Assumptions
