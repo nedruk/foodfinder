@@ -28,5 +28,9 @@
 	"postStartCommand": "npm update -g serverless && npm install",
 
 	// Connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+	"remoteUser": "node",
+	
+	"forwardPorts": [
+		7071
+	]
 }

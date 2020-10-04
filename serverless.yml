@@ -5,7 +5,8 @@ frameworkVersion: '2'
 provider:
   name: azure
   runtime: nodejs12
-  region: 'Australia Southeast'
+  region: 'Australia Southeast'  
+  stage: ${opt:stage, 'dev'}  
 
 plugins: 
   - serverless-azure-functions

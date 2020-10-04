@@ -9,6 +9,4 @@ COPY library-scripts/*.sh /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && bash /tmp/library-scripts/azcli-debian.sh
 
-RUN bash /tmp/library-scripts/azcli-debian.sh 
-
 RUN npm install -g serverless
