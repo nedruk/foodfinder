@@ -1,0 +1,44 @@
+trigger:
+  - master
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - checkout: self
+    clean: true
+
+  - task: Npm@1
+    displayName: "npm install"
+    inputs:
+      command: 'install'
+      verbose: false
+
+  - bash: |
+      npm show serverless version >> serverless_version.txt 
+      npm run lint
+    displayName: "Linting Files and capturing SLS version"
+
+  - bash: |
+      npm run coverage
+    displayName: "Code Coverage"
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
+
+  - task: whitesource.ws-bolt.bolt.wss.WhiteSource Bolt@20
+    displayName: "Scan Dependencies"
+
+  - task: ArchiveFiles@2
+    displayName: "Archive"
+    inputs:
+      rootFolderOrFile: .
+      includeRootFolder: false
+      archiveFile: "$(Build.ArtifactStagingDirectory)/drop.zip"
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: drop"
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)/drop.zip"

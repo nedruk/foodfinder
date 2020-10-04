@@ -4,6 +4,7 @@
   "description": "Azure Functions sample for the Serverless framework",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage --coverageReporters=cobertura",
     "start": "func host start",
     "lint": "./node_modules/.bin/eslint --fix src"
   },
